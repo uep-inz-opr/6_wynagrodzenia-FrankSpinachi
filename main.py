@@ -44,17 +44,24 @@ lista_pracowników = []
 for i in range(liczba_pracowników):
     prac = input().strip()
     prac = prac.split(' ')
-    for j in range(len(prac)):
-        lista_pracowników.append(Pracownik(prac[0],prac[1]))
+    lista_pracowników.append(Pracownik(prac[0],prac[1]))
+
+# for i in range(liczba_pracowników):
+#     prac = input().strip()
+#     prac = prac.split(' ')
+#     print("prac:",prac)
+#     for j in range(len(prac)):
+#         print("prac0",prac[0],"prac1",prac[1])
+#         lista_pracowników.append(Pracownik(prac[0],prac[1]))
 
 
 łączny_koszt_pracodawcy = 0
 
 for x in range(liczba_pracowników):
-    lista_pracowników[x+1].wynik(lista_pracowników[x+1]._imie,lista_pracowników[x+1]._wynagrodzenieBrutto)
+    lista_pracowników[x].wynik(lista_pracowników[x]._imie,lista_pracowników[x]._wynagrodzenieBrutto)
 
 
 for obj in range(len(lista_pracowników)):
      łączny_koszt_pracodawcy += lista_pracowników[obj].koszt_pracodawcy_per_pracownik(lista_pracowników[obj]._wynagrodzenieBrutto)
 
-print(f"{round(łączny_koszt_pracodawcy/2,2):.2f}")
+print(f"{round(łączny_koszt_pracodawcy,2):.2f}")
